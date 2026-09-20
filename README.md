@@ -1,16 +1,16 @@
 # pmterm
-pmterm is a beautiful, self-contained terminal (TUI) Pomodoro timer written in Rust. It features an elegant minimalist interface, responsive layout blocks, keyboard-driven controls, and built-in, seamlessly looping ambient background sounds (like rain and fireplace) embedded directly into a single portable binary.
+pmterm is a beautiful, self-contained terminal (tui) pomodoro timer written in rust. it features an elegant minimalist interface, responsive layout blocks, keyboard-driven controls, and built-in, seamlessly looping ambient background sounds (like rain and fireplace) embedded directly into a single portable binary.
 
-A terminal-based Pomodoro timer with ambient sound support. Written in Rust with `ratatui`, `crossterm`, and `rodio`.
+a terminal-based pomodoro timer with ambient sound support. written in rust with `ratatui`, `crossterm`, and `rodio`.
 
-## Installation
+## installation
 
-### Prerequisites
+### prerequisites
 
-- Rust 1.81+ (install via [rustup](https://rustup.rs))
-- Linux: `libasound2-dev` (Debian/Ubuntu) or `alsa-lib-devel` (Fedora)
+- rust 1.81+ (install via [rustup](https://rustup.rs))
+- linux: `libasound2-dev` (debian/ubuntu) or `alsa-lib-devel` (fedora)
 
-### Build from source
+### build from source
 
 ```sh
 git clone <repo-url> pmterm
@@ -18,39 +18,39 @@ cd pmterm
 cargo install --path .
 ```
 
-The binary is self-contained — all audio files are compiled into the executable.
+the binary is self-contained — all audio files are compiled into the executable.
 
-## Usage
+## usage
 
-### Controls
+### controls
 
-| Key | Action |
+| key | action |
 |---|---|
-| `Space` | Pause / Resume timer |
-| `r` / `R` | Reset current session |
-| `s` / `S` | Skip to next session |
-| `1` | Play rain ambient |
-| `2` | Play fireplace ambient |
-| `0` | Stop ambient sound |
-| `↑` / `↓` | Cycle ambient sounds |
-| `m` / `M` | Mute / Unmute all audio |
-| `q` / `Q` / `Esc` | Quit |
+| `space` | pause / resume timer |
+| `r` / `r` | reset current session |
+| `s` / `s` | skip to next session |
+| `1` | play rain ambient |
+| `2` | play fireplace ambient |
+| `0` | stop ambient sound |
+| `↑` / `↓` | cycle ambient sounds |
+| `m` / `m` | mute / unmute all audio |
+| `q` / `q` / `esc` | quit |
 
-### Timer cycle
+### timer cycle
 
 ```
-Focus (25m) → Short Break (5m) → Focus (25m) → Short Break (5m) →
-Focus (25m) → Short Break (5m) → Focus (25m) → Long Break (15m) → …
+focus (25m) → short break (5m) → focus (25m) → short break (5m) →
+focus (25m) → short break (5m) → focus (25m) → long break (15m) → …
 ```
 
-After 4 focus sessions, a long break replaces the short break.
+after 4 focus sessions, a long break replaces the short break.
 
-### Audio
+### audio
 
-`rain.mp3` and `fireplace.mp3` are shipped in the repo and embedded into the binary at compile time via `include_bytes!`. Supported formats depend on the `symphonia-all` feature — MP3, FLAC, OGG Vorbis, WAV, AAC, and more.
+`rain.mp3` and `fireplace.mp3` are shipped in the repo and embedded into the binary at compile time via `include_bytes!`. supported formats depend on the `symphonia-all` feature — mp3, flac, ogg vorbis, wav, aac, and more.
 
-## Requirements
+## requirements
 
-- **Terminal**: Any modern terminal emulator with true color support (GNOME Terminal, Kitty, Alacritty, WezTerm, foot, etc.)
-- **Audio**: ALSA (Linux), PulseAudio, or PipeWire
-- **Cargo**
+- **terminal**: any modern terminal emulator with true color support (gnome terminal, kitty, alacritty, wezterm, foot, etc.)
+- **audio**: alsa (linux), pulseaudio, or pipewire
+- **cargo**
